@@ -56,7 +56,7 @@ if __name__ == '__main__':
     # Filter the DataFrame based on the lookup criteria using multiprocessing
     with Pool() as p:
         filtered_data = pd.concat(
-            p.map(lookup_student, [(data, lookup_criteria)] * 4))
+            p.map(lookup_student, [(data, lookup_criteria)]))
     filtered_data = filtered_data.drop_duplicates(keep="first")
 
     print(filtered_data)
